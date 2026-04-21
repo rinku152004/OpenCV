@@ -1,0 +1,9 @@
+{
+  "camera_source": 0,
+  "line_position": 300,
+  "camera_id": "CAM_01",
+  "cooldown_seconds": 5,
+  "mongo_uri": "mongodb://localhost:27017/",
+  "db_name": "aruco_db",
+  "collection_name": "entries"
+}

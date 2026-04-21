@@ -1,0 +1,2 @@
+gray.jpg 0.035
+open.jpg 0.054
