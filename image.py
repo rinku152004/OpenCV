@@ -1,8 +1,8 @@
 # import numpy as np
 # import cv2 as cv
 
-# img = cv.imread('boy1.jpg')
-# mask = cv.imread('boy2.jpg', cv.IMREAD_GRAYSCALE)
+# img = cv.imread('images/boy1.jpg')
+# mask = cv.imread('images/boy2.jpg', cv.IMREAD_GRAYSCALE)
 
 # dst = cv.inpaint(img,mask,3,cv.INPAINT_TELEA)
 
@@ -16,7 +16,7 @@ import cv2 as cv
 from matplotlib import pyplot as plt
 
 
-img = cv.imread('roi.jpg', cv.IMREAD_GRAYSCALE)
+img = cv.imread('images/roi.jpg', cv.IMREAD_GRAYSCALE)
 assert img is not None, "file could not be read, check with os.path.exists()"
 edges = cv.Canny(img,100,200)
 
@@ -38,7 +38,7 @@ import numpy as np
 import cv2 as cv
 from matplotlib import pyplot as plt
 
-img = cv.imread('roi.jpg')
+img = cv.imread('images/roi.jpg')
 
 dst = cv.fastNlMeansDenoisingColored(img,None,10,10,7,21)
 
@@ -72,12 +72,8 @@ noisy = [np.uint8(np.clip(i,0,255)) for i in noisy]
 # Denoise 3rd frame considering all the 5 frames
 dst = cv.fastNlMeansDenoisingMulti(noisy, 2, 5, None, 4, 7, 35)
 
-image=cv.imwrite("rinkuu.jpg",dst)
+image=cv.imwrite("images/rinkuu.jpg",dst)
 print("image saved successfully....")
-ima=cv.imread("rinkuu.jpg",cv.IMREAD_GRAYSCALE)
-assert img is not None, "file could not be read, check with os.path.exists()"
-edges=cv.Canny(ima,100,200)
-
 
 plt.subplot(131),plt.imshow(gray[2],'gray')
 plt.subplot(132),plt.imshow(noisy[2],'gray')
@@ -85,6 +81,9 @@ plt.subplot(133),plt.imshow(dst,'gray')
 plt.show()
 cv.waitKey(0)
 
+ima=cv.imread("images/rinkuu.jpg",cv.IMREAD_GRAYSCALE)
+assert img is not None, "file could not be read, check with os.path.exists()"
+edges=cv.Canny(ima,100,200)
 plt.subplot(121),plt.imshow(ima,cmap = 'gray')
 plt.title('Original Image'), plt.xticks([]), plt.yticks([])
 plt.subplot(122),plt.imshow(edges,cmap = 'gray')
@@ -97,7 +96,7 @@ import cv2 as cv
 import sys
 import numpy as np
 
-img = cv.imread("ml.jpg")
+img = cv.imread("images/ml.jpg")
 mblur = cv.medianBlur(img,3)
 cv.imshow("Original Image", img)
 cv.imshow("Median Blurred Image", mblur)
@@ -130,7 +129,7 @@ cv.imshow("Display window", img)
 k = cv.waitKey(0)
 
 if k == ord("s"):
-    cv.imwrite("gray.png", img)
+    cv.imwrite("images/gray.png", img)
     print("Image saved as gray.png")
 
 
@@ -145,7 +144,7 @@ if k == ord("s"):
 # # better visibility, and a threshold is applied to mark the corners on the original image. Finally,
 # #  the result is displayed using OpenCV.
 
-# img = cv.imread('hello.png')
+# img = cv.imread('images/hello.png')
 # gray = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
 
 # gray = np.float32(gray)
@@ -171,7 +170,7 @@ if k == ord("s"):
 # # defined ROI. Finally, the segmented image is displayed using Matplotlib. The algorithm iteratively
 # #  refines the segmentation by classifying pixels as foreground or background based on color and 
 # # texture information.
-# img = cv.imread('roi.jpg')
+# img = cv.imread('images/roi.jpg')
 # assert img is not None, "file could not be read, check with os.path.exists()"
 # mask = np.zeros(img.shape[:2],np.uint8)
 
@@ -194,7 +193,7 @@ if k == ord("s"):
 # # function to detect circles based on the specified parameters. The detected circles are then drawn 
 # # on a color version of the image, and the result is displayed using OpenCV. Each detected circle is
 # # represented by its center coordinates and radius, which are used to draw the circles on the image.
-# img = cv.imread('hello.png', cv.IMREAD_GRAYSCALE)
+# img = cv.imread('images/hello.png', cv.IMREAD_GRAYSCALE)
 # assert img is not None, "file could not be read, check with os.path.exists()"
 # img = cv.medianBlur(img,5)
 # cimg = cv.cvtColor(img,cv.COLOR_GRAY2BGR)
@@ -219,7 +218,7 @@ if k == ord("s"):
 # # import numpy as np
 # # import cv2 as cv
 # # # accessing and modifying pixels values
-# # img= cv.imread('starry_night.jpg')
+# # img= cv.imread('images/starry_night.jpg')
 # # assert img is not None, "file could not be read, check with os.path.exists()"
 # # px=img[100,100]
 # # print(px)
@@ -251,7 +250,7 @@ if k == ord("s"):
 
 # # BLUE = [255,0,0]
 
-# # img1 = cv.imread('border.jpg')
+# # img1 = cv.imread('images/border.jpg')
 # # assert img1 is not None, "file could not be read, check with os.path.exists()"
 
 # # replicate = cv.copyMakeBorder(img1,10,10,10,10,cv.BORDER_REPLICATE)
@@ -276,7 +275,7 @@ if k == ord("s"):
 # import cv2 as cv
 # import matplotlib.pyplot as plt
 
-# img = cv.imread('ml.jpg', cv.IMREAD_GRAYSCALE)
+# img = cv.imread('images/ml.jpg', cv.IMREAD_GRAYSCALE)
 # if img is None:
 #     print("Could not read the image.")
 
@@ -332,27 +331,27 @@ if k == ord("s"):
 # # ============================================================================================================================================
 # # # image blending is the process of combining two images together using a weighted sum. The formula for image blending is:
 # # import cv2 as cv
-# # img1 = cv.imread('ml.jpg')
-# # img2 = cv.imread('open.jpg')
+# # img1 = cv.imread('images/ml.jpg')
+# # img2 = cv.imread('images/open.jpg')
 # # assert img1 is not None, "file could not be read, check with os.path.exists()"
 # # assert img2 is not None, "file could not be read, check with os.path.exists()"
 
 # # dst = cv.addWeighted(img1,0.7,img2,0.3,0)
 
 # # cv.imshow('dst',dst)
-# # cv.imwrite('dst.jpg', dst)
+# # cv.imwrite('images/dst.jpg', dst)
 # # cv.waitKey(0)
 # # cv.destroyAllWindows()
 
-# # # img=cv.imread('open.jpg', cv.IMREAD_COLOR)
+# # # img=cv.imread('images/open.jpg', cv.IMREAD_COLOR)
 # # # cv.imshow('image',img)
-# # # cv.imwrite('gray_image.jpg', img)
+# # # cv.imwrite('images/gray_image.jpg', img)
 # # # cv.waitKey(0)
 
 
 # # # Load two images
-# img1 = cv.imread('roi.jpg')
-# img2 = cv.imread('fusion.png')
+# img1 = cv.imread('images/roi.jpg')
+# img2 = cv.imread('images/fusion.png')
 # assert img1 is not None, "file could not be read, check with os.path.exists()"
 # assert img2 is not None, "file could not be read, check with os.path.exists()"
 
@@ -376,13 +375,13 @@ if k == ord("s"):
 # img1[0:rows, 0:cols ] = dst
 
 # cv.imshow('res',img1)
-# cv.imwrite('res.jpg', img1)
+# cv.imwrite('images/res.jpg', img1)
 # cv.waitKey(0)
 # cv.destroyAllWindows()
 
 
 # # ============================================================================================================================================
-# # img1 = cv.imread('overlay.jpg')
+# # img1 = cv.imread('images/overlay.jpg')
 # # assert img1 is not None, "file could not be read, check with os.path.exists()"
 # # cv.useOptimized()
 # # e1 = cv.getTickCount()
@@ -407,7 +406,7 @@ if k == ord("s"):
 # #the code below applies different types of thresholding to an image. It reads an image in grayscale, applies five different thresholding
 # #techniques (BINARY, BINARY_INV, TRUNC, TOZERO, TOZERO_INV), and then displays the original and thresholded images using Matplotlib.Each
 # #thresholding technique produces a different binaryimage basedon the specified threshold value (127 in thiscase) and the maximum value(255).
-# img = cv.imread('starry_night.jpg', cv.IMREAD_COLOR_RGB)
+# img = cv.imread('images/starry_night.jpg', cv.IMREAD_COLOR_RGB)
 # assert img is not None, "file could not be read, check with os.path.exists()"
 # ret,thresh1 = cv.threshold(img,127,255,cv.THRESH_BINARY)
 # ret,thresh2 = cv.threshold(img,127,255,cv.THRESH_BINARY_INV)
@@ -433,7 +432,7 @@ if k == ord("s"):
 # # reduce noise, and then applies global thresholding (with a fixed threshold value) and two types of adaptive thresholding (mean and 
 # # Gaussian). Finally, it displays the original and thresholded images using Matplotlib. Each thresholding technique produces a different
 # #  binary image based on the specified parameters.
-# img = cv.imread('starry_night.jpg', cv.IMREAD_GRAYSCALE)
+# img = cv.imread('images/starry_night.jpg', cv.IMREAD_GRAYSCALE)
 # assert img is not None, "file could not be read, check with os.path.exists()"
 # img = cv.medianBlur(img,5)
 
@@ -461,7 +460,7 @@ if k == ord("s"):
 # import numpy as np
 # from matplotlib import pyplot as plt
 
-# img = cv.imread('roi.jpg', cv.IMREAD_GRAYSCALE)
+# img = cv.imread('images/roi.jpg', cv.IMREAD_GRAYSCALE)
 # assert img is not None, "file could not be read, check with os.path.exists()"
 
 # # global thresholding
@@ -499,7 +498,7 @@ if k == ord("s"):
 # # iterates through all possible threshold values (from 1 to 255) and calculates the within-class variance for each threshold. The 
 # # threshold that minimizes this variance is selected as the optimal threshold. Finally, it compares the calculated optimal threshold with 
 # # the one obtained using OpenCV's built-in Otsu's thresholding function and prints both values.
-# img = cv.imread('roi.jpg', cv.IMREAD_GRAYSCALE)
+# img = cv.imread('images/roi.jpg', cv.IMREAD_GRAYSCALE)
 # assert img is not None, "file could not be read, check with os.path.exists()"
 # blur = cv.GaussianBlur(img,(5,5),0)
 

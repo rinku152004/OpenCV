@@ -7,7 +7,7 @@
 # marker_image = cv2.aruco.generateImageMarker(dictionary, 23, 200)
 
 # # Save marker image
-# cv2.imwrite("marker23.png", marker_image)
+# cv2.imwrite("images/marker23.png", marker_image)
 
 # print("Marker saved as marker23.png")
 
@@ -21,7 +21,7 @@
 # # ---------------- Argument Parser ----------------
 # parser = argparse.ArgumentParser(description="ArUco Marker Generator")
 
-# parser.add_argument("outfile", nargs='?', default="res.png",
+# parser.add_argument("outfile", nargs='?', default="images/res.png",
 #                     help="Output image file")
 
 # parser.add_argument("-d", type=int, default=0,
@@ -115,7 +115,7 @@ import argparse
 parser = argparse.ArgumentParser(description="Generate ArUco Marker")
 
 
-parser.add_argument("outfile", nargs='?', default="res.png",
+parser.add_argument("outfile", nargs='?', default="images/res.png",
                     help="Output image file")
 
 parser.add_argument("-d", type=int, default=0,

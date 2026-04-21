@@ -1,4 +1,4 @@
-# =======================same as second one============================= 
+#=============================this code is for showing the output frames side by side with live video capturing=========================
 import cv2 as cv
 import numpy as np
 import threading
@@ -256,7 +256,7 @@ cv.destroyAllWindows()
 # import numpy as np
 
 # # ================== STEP 1: RECORD VIDEO ==================
-# def record_video(filename="recorded.mp4", duration=10):
+# def record_video(filename="images/recorded.mp4", duration=10):
 #     cap = cv2.VideoCapture(0)
 
 #     if not cap.isOpened():
@@ -303,7 +303,7 @@ cv.destroyAllWindows()
 #     q2 = queue.Queue(maxsize=10)
 #     q3 = queue.Queue(maxsize=10)
 #     q4 = queue.Queue(maxsize=10)
-#     # path="rinku.mp4"
+#     # path="images/rinku.mp4"
 #     stop_event = threading.Event()
 
 #     # -------- Reader --------
@@ -407,7 +407,7 @@ cv.destroyAllWindows()
 # # ================== MAIN ==================
 # if __name__ == "__main__":
 
-#     video_file = "recorded.mp4"
+#     video_file = "images/recorded.mp4"
 
 #     # Step 1: Record
 #     success = record_video(video_file, duration=10)

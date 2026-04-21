@@ -4,7 +4,7 @@ import queue
 import numpy as np
 
 # Video path
-# video_path = "Susi.mp4"
+# video_path = "images/Susi.mp4"
 
 # Queues for pipeline
 read_queue = queue.Queue(maxsize=10)
@@ -16,7 +16,7 @@ diff_queue = queue.Queue(maxsize=10)
 # Frame Reader Thread
 # -----------------------------
 def frame_reader():
-    cap = cv.VideoCapture('Rinku.mp4')
+    cap = cv.VideoCapture('images/Rinku.mp4')
 
     while True:
         ret, frame = cap.read()
@@ -137,7 +137,7 @@ import queue
 import numpy as np
 
 # ================== STEP 1: RECORD VIDEO ==================
-def record_video(filename="recorded.mp4", duration=10):
+def record_video(filename="images/recorded.mp4", duration=10):
     cap = cv.VideoCapture(0)
 
     if not cap.isOpened():
@@ -312,7 +312,7 @@ def run_pipeline(path):
 # ================== MAIN ==================
 if __name__ == "__main__":
 
-    video_file = "recorded.mp4"
+    video_file = "images/recorded.mp4"
 
     # Step 1: Record
     success = record_video(video_file, duration=10)

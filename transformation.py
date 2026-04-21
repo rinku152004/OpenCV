@@ -6,7 +6,7 @@
 # import cv2 as cv
 # from matplotlib import pyplot as plt
 
-# img = cv.imread('roi.jpg', cv.IMREAD_GRAYSCALE)
+# img = cv.imread('images/roi.jpg', cv.IMREAD_GRAYSCALE)
 # assert img is not None, "file could not be read, check with os.path.exists()"
 # higher_reso = img
 # lower_reso = cv.pyrDown(higher_reso)
@@ -108,7 +108,7 @@
 # # this code demonstrates edge detection using the Laplacian and Sobel operators in OpenCV. It reads an image in grayscale, applies the 
 # # Laplacian operator to detect edges, and applies the Sobel operator in both x and y directions to detect horizontal and vertical edges, 
 # # respectively. The original image, Laplacian result, and Sobel results are displayed in a 2x2 grid using Matplotlib.
-# img = cv.imread('ml.jpg', cv.IMREAD_GRAYSCALE)
+# img = cv.imread('images/ml.jpg', cv.IMREAD_GRAYSCALE)
 # assert img is not None, "file could not be read, check with os.path.exists()"
 
 # laplacian = cv.Laplacian(img,cv.CV_64F)
@@ -134,7 +134,7 @@
 # # an image in color, applies the Sobel operator to detect edges in the x direction, and displays the original image, the result of the 
 # # Sobel operator with CV_8U, and the result of the Sobel operator with CV_64F (after taking the absolute value and converting to CV_8U)
 # # in a 1x3 grid using Matplotlib.
-# img = cv.imread('starry_night.png', cv.IMREAD_COLOR_RGB)
+# img = cv.imread('images/starry_night.png', cv.IMREAD_COLOR_RGB)
 # assert img is not None, "file could not be read, check with os.path.exists()"
 
 # # Output dtype = cv.CV_8U
@@ -165,12 +165,12 @@ import cv2 as cv
 import numpy as np
 
 
-# apple = cv.imread('apple.jpg')
-# orange = cv.imread('orange.jpg')
+# apple = cv.imread('images/apple.png')
+# orange = cv.imread('images/orange.png')
 
 # Read images
-apple = cv.imread('apple.png')
-orange = cv.imread('orange.png')
+apple = cv.imread('images/apple.png')
+orange = cv.imread('images/orange.png')
 
 # Resize to same size
 apple = cv.resize(apple,(512,512))

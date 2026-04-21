@@ -5,7 +5,7 @@
 # import sys
 
 # # Read an image from the specified file path
-# img = cv.imread(cv.samples.findFile("hetal.png"))
+# img = cv.imread(cv.samples.findFile("images/hetal.png"))
 
 # # Check if the image was loaded successfully
 # if img is None:
@@ -19,7 +19,7 @@
 
 # # If the 's' key is pressed, save the image
 # if k == ord("s"):
-#     cv.imwrite("hetal.png", img)
+#     cv.imwrite("images/hetal.png", img)
 
 
 # ==============================================================================================================================
@@ -27,7 +27,7 @@
 import cv2
 import vlc  # Make sure you ran: pip install python-vlc
 
-video_path = "Susi.mp4"
+video_path = "images/Susi.mp4"
 
 # 1. Setup VLC for Audio only
 # --no-video prevents a second window from popping up
@@ -121,6 +121,6 @@ cv.putText(img, "OpenCV OK", (10, 80), cv.FONT_HERSHEY_SIMPLEX, 2, (255,255,255)
 # If you installed a non-headless build, you can display a window:
 # cv.imshow("hello", img); cv.waitKey(0)
 # Always safe (headless or not): save to file
-cv.imwrite("hello.png", img)
-cv.imshow("hello.png", img)
+cv.imwrite("images/hello.png", img)
+cv.imshow("images/hello.png", img)
 cv.waitKey(0)

@@ -39,9 +39,9 @@
 # merge_mertens = cv.createMergeMertens()
 # fusion = merge_mertens.process(images)
 
-# cv.imwrite('fusion.png', fusion * 255)
-# cv.imwrite('ldr.png', ldr * 255)
-# cv.imwrite('hdr.hdr', hdr)
+# cv.imwrite('images/fusion.png', fusion * 255)
+# cv.imwrite('images/ldr.png', ldr * 255)
+# cv.imwrite('images/hdr.hdr', hdr)
 
 import cv2 as cv
 import numpy as np
@@ -49,8 +49,8 @@ import numpy as np
 cv.utils.logging.setLogLevel(cv.utils.logging.LOG_LEVEL_ERROR)
 
 # Load images
-img1 = cv.imread("open.jpg")
-img2 = cv.imread("gray.jpg")
+img1 = cv.imread("images/open.jpg")
+img2 = cv.imread("images/gray.jpg")
 
 # Check if images loaded
 if img1 is None or img2 is None:
@@ -89,9 +89,9 @@ ldr_8bit = np.clip(ldr * 255, 0, 255).astype(np.uint8)
 fusion_8bit = np.clip(fusion * 255, 0, 255).astype(np.uint8)
 
 # Save results
-cv.imwrite("fusion.png", fusion_8bit)
-cv.imwrite("ldr.png", ldr_8bit)
-cv.imwrite("hdr.hdr", hdr)
+cv.imwrite("images/fusion.png", fusion_8bit)
+cv.imwrite("images/ldr.png", ldr_8bit)
+cv.imwrite("images/hdr.hdr", hdr)
 
 # Show results
 # cv.imshow("Image 1", img1)

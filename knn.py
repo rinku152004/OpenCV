@@ -1,7 +1,7 @@
 import numpy as np
 import cv2 as cv
 
-img = cv.imread('chessboard.jpg')
+img = cv.imread('images/chessboard.jpg')
 Z = img.reshape((-1,3))
 
 # convert to np.float32
@@ -113,7 +113,7 @@ plt.show()
 import numpy as np
 import cv2 as cv
 
-img = cv.imread('hello.png')
+img = cv.imread('images/hello.png')
 gray = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
 
 # Now we split the image to 5000 cells, each 20x20 size

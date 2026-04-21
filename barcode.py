@@ -45,7 +45,7 @@
 
 # pano = pano[y:y+h, x:x+w]
 
-# cv.imwrite("panorama_result.jpg", pano)
+# cv.imwrite("images/panorama_result.jpg", pano)
 
 # cv.imshow("Panorama", pano)
 # cv.waitKey(0)
@@ -55,8 +55,8 @@
 
 import cv2 as cv
 
-img1 = cv.imread("open.jpg")
-img2 = cv.imread("ml.jpg")
+img1 = cv.imread("images/open.jpg")
+img2 = cv.imread("images/ml.jpg")
 
 images = [img1, img2]
 
@@ -64,7 +64,7 @@ stitcher = cv.Stitcher.create()
 status, pano = stitcher.stitch(images)
 
 if status == cv.Stitcher_OK:
-    cv.imwrite("result.jpg", pano)
+    cv.imwrite("images/result.jpg", pano)
     cv.imshow("Panorama", pano)
     cv.waitKey(0)
 else:
@@ -77,7 +77,7 @@ import numpy as np
 from pyzbar.pyzbar import decode
 
 # Read image
-img = cv.imread("barcodee.jpg")
+img = cv.imread("images/barcodee.jpg")
 
 # Convert to grayscale
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
@@ -165,7 +165,7 @@ cv.destroyAllWindows()
 
 
 # if __name__ == "__main__":
-#     img = cv.imread('barcodee.jpg')
+#     img = cv.imread("images/barcodee.jpg")
 #     # gray = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
 #     gray = cv.GaussianBlur(img,(3,3),0)
 #     edged = cv.Canny(gray, 50, 200, 255)

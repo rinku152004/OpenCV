@@ -14,7 +14,7 @@ pts = pts.reshape((-1,1,2))
 cv.polylines(img,[pts],True,(0,255,255))
 font = cv.FONT_HERSHEY_SIMPLEX
 cv.putText(img,'OpenCV',(10,500), font, 4,(255,255,255),2,cv.LINE_AA)
-cv.imwrite('drawing.png',img)
+cv.imwrite('images/drawing.png',img)
 cv.imshow('image',img)
 cv.waitKey(0)
 

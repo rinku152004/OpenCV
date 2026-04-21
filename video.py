@@ -3,7 +3,7 @@
 # import cv2
 # import vlc  # Make sure you ran: pip install python-vlc
 
-# video_path = "Susi.mp4"
+# video_path = "images/Susi.mp4"
 
 # # 1. Setup VLC for Audio only
 # # --no-video prevents a second window from popping up
@@ -58,7 +58,7 @@
 # height = int(cap.get(cv.CAP_PROP_FRAME_HEIGHT))
 
 # fourcc = cv.VideoWriter_fourcc(*'mp4v')
-# out = cv.VideoWriter('output.mp4', fourcc, 20.0, (width,height))
+# out = cv.VideoWriter('images/output.mp4', fourcc, 20.0, (width,height))
 
 # while True:
 #     ret, frame = cap.read()
@@ -92,7 +92,7 @@
 
 # # Define the codec and create VideoWriter object
 # fourcc = cv.VideoWriter_fourcc(*'mp4v')  # Be sure to use lower case
-# out = cv.VideoWriter('output.mp4', fourcc, 20.0, (width,  height))
+# out = cv.VideoWriter('images/output.mp4', fourcc, 20.0, (width,  height))
 
 # while cap.isOpened():
 #     ret, frame = cap.read()

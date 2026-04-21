@@ -4,7 +4,7 @@ import numpy as np
 import cv2 as cv
 from matplotlib import pyplot as plt
 
-image = cv.imread('hello.png')
+image = cv.imread('images/hello.png')
 crop_img = image[50:80, 50:200]
 cv.imshow('Cropped Image', crop_img)
 flipped = cv.flip(image, 1)
@@ -28,7 +28,7 @@ if image is not None:
 else:    
     print('Could not read the image.')
 
-img = cv.imread('chessboard.jpg')
+img = cv.imread('images/chessboard.jpg')
 gray = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
 
 corners = cv.goodFeaturesToTrack(gray,25,0.01,10)
@@ -45,7 +45,7 @@ import numpy as np
 import cv2 as cv
 # it detects corners in an image using the Harris Corner Detection algorithm. It reads an image, 
 # converts it to grayscale, and applies the
-filename = 'chessboard.jpg'
+filename = 'images/chessboard.jpg'
 img = cv.imread(filename)
 gray = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
 
@@ -68,7 +68,7 @@ import numpy as np
 import cv2 as cv
 from matplotlib import pyplot as plt
 
-img = cv.imread('chessboard.jpg', cv.IMREAD_GRAYSCALE)
+img = cv.imread('images/chessboard.jpg', cv.IMREAD_GRAYSCALE)
 
 # Initiate FAST detector
 star = cv.xfeatures2d.StarDetector_create()
@@ -95,7 +95,7 @@ cv.destroyAllWindows()
 # it is known as callibration of camera using chessboard pattern. It is used to find the intrinsic and extrinsic parameters of the camera.
 import cv2 as cv
 
-image= cv.imread('chessboard.jpg')
+image= cv.imread('images/chessboard.jpg')
 
 if image is None:
     print('Could not read the image.')
@@ -140,7 +140,7 @@ objp[:,:2] = np.mgrid[0:7,0:6].T.reshape(-1,2)
 objpoints = [] # 3d point in real world space
 imgpoints = [] # 2d points in image plane.
 
-images = glob.glob('open.jpg')
+images = glob.glob('images/open.jpg')
 
 for fname in images:
     img = cv.imread(fname)
@@ -212,7 +212,7 @@ axis = np.float32([[3,0,0], [0,3,0], [0,0,-3]]).reshape(-1,3)
 # axis_cube= np.float32([[0,0,0], [3,0,0], [3,3,0], [0,3,0],
 #                         [0,0,-3], [3,0,-3], [3,3,-3], [0,3,-3]])
 
-for fname in glob.glob('chessboard.jpg'):
+for fname in glob.glob('images/chessboard.jpg'):
     img = cv.imread(fname)
     gray = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
     ret, corners = cv.findChessboardCorners(gray, (7,6),None)
@@ -230,6 +230,6 @@ for fname in glob.glob('chessboard.jpg'):
         cv.imshow('img',img)
         k = cv.waitKey(0) & 0xFF
         if k == ord('s'):
-            cv.imwrite(fname[:6]+'.png', img)
+            cv.imwrite('images/' + fname[:6] + '.png', img)
 
 cv.destroyAllWindows()
